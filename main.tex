@@ -1,25 +1,40 @@
+% - Este es el preámbulo - % 
 \documentclass{report}
 \usepackage{graphicx}
-\usepackage[margin=0.5in]{geometry}
+% - Tamaño de papel y margenes - %
+\usepackage[letterpaper, tmargin=2cm, bmargin=2cm, lmargin=3cm, rmargin=2cm]{geometry}
+% ------------------------------ %
+\usepackage{ragged2e}
+\usepackage{tabularx}
 \begin{document}
+% ------------------------ %
+
+% - Portada - %
 \begin{titlepage}
-\includegraphics[width = 33mm]{unam.png}
-\hfill
-\includegraphics[width = 40mm]{cnyn.png}
-\centering
-\par
-\vspace{3cm}
-{\bfseries\LARGE\universidad\par}
-\vspace{1cm}
-{\scshape\Large\facultad\par}
-\vspace{3cm}
+% - Logos y nombres de la institución - %
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}m{#1}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
+
+\centering{
+\begin{tabular}{L{0.2\textwidth} C{0.5\textwidth} R{0.2\textwidth}}
+\includegraphics[height=3.5cm,width=3cm,keepaspectratio]{unam.png} & \vspace{1cm}\centering{{\bfseries\LARGE\universidad\par}{\scshape\large\facultad\par}} & \includegraphics[height=3.5cm,width=3cm,keepaspectratio]{cnyn.png}
+\end{tabular}
+}
+% ------------------------------------- %
+\vfill
 {\scshape\Huge\trabajo\par}
-\vspace{3cm}
+\vspace{1cm}
 {\itshape\Large\materia\par}
 \vfill
 {\Large Alumno: \par}
 {\Large\alumno\par}
+\vspace{1cm}
+{\Large Profesor de asignatura: \par}
+{\Large\profesor\par}
 \vfill
 {\Large\fecha\par}
 \end{titlepage}
+% ----------- %
+
 \end{document} 
