@@ -37,12 +37,17 @@ if [[ -z "$subject_name" ]] ; then
   read -p "Subject name: " subject_name
 fi
 
+if [[ -z "$professor" ]] ; then
+  read -p "Professor: " professor
+fi
+
 echo "\\newcommand{\\materia}{$subject_name}" > temp.tex
 echo "\\newcommand{\\alumno}{$student_name}" >> temp.tex
 echo "\\newcommand{\\trabajo}{$work_name}" >> temp.tex
 echo "\\newcommand{\\universidad}{$university_name}" >> temp.tex
 echo "\\newcommand{\\facultad}{$faculty_name}" >> temp.tex
 echo "\\newcommand{\\fecha}{$due_date}" >> temp.tex
+echo "\\newcommand{\\profesor}{$professor}" >> temp.tex
 cat main.tex >> temp.tex
 
 pdflatex temp.tex
